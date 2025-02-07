@@ -1,21 +1,3 @@
-fileFormatVersion: 2
-guid: 3c8eb8bf791c81e44a1775c76461fb09
-TrueTypeFontImporter:
-  externalObjects: {}
-  serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
-  characterSpacing: 0
-  characterPadding: 1
-  includeFontData: 1
-  fontNames:
-  - Jersey 15
-  fallbackFontReferences: []
-  customCharacters: 
-  fontRenderingMode: 0
-  ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:543f5e886e159dc01cc7957b6b9925a4bd24ecaadde6c6ffc4265fb854b7cb2c
+size 474
