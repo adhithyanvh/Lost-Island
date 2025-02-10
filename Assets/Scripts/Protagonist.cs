@@ -74,7 +74,7 @@ public class Protagonist : MonoBehaviour
 
             if(Input.GetKey(KeyCode.LeftShift))
             {
-                speed = 8f;
+                speed = 10f;
                 SophieAnimator.SetBool("run", true);
                 SophieAnimator.SetBool("walk", false);
                 SophieAnimator.SetBool("stand", false);
