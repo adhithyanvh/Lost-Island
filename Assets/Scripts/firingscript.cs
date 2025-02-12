@@ -55,8 +55,5 @@ public class firingscript : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter(Collider other)
-    {
-
-    }*/
+    
 }

@@ -183,34 +183,10 @@ public class Scoredisplay : MonoBehaviour
         {
             text3.text = "";
         }
-        /* woodplyrdist = Vector3.Distance(woodlogs.transform.position, playerr.transform.position);
-         if (woodplyrdist < 30f)
-         {
-             Debug.Log("hinttttt!!!");
-         }*/
-
-
        
-
-       // lifeChanger();
-
     }
 
-    /*private void OnTriggerEnter(Collider other)
-    {
-        
-
-        *//*if (other.CompareTag("enemyy"))
-        {
-            Destroy(gameObject);
-            Debug.Log("hehehe");
-        }*//*
-
-        
-
-        
-    }*/
-
+    
 
     public void lifeChanger()
     {

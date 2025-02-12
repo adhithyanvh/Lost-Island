@@ -15,7 +15,7 @@ public class Protagonist : MonoBehaviour
     public int life;
 
 
-    float speed = 20;
+    float speed = 30;
     public GameObject[] spots;
     public GameObject[] Savepos;
     public GameObject woodlogs, boat, boatspott, Sophie;
@@ -106,130 +106,19 @@ public class Protagonist : MonoBehaviour
         
         
 
-        /*    if (Input.GetKey(KeyCode.W))
-            {
-                SophieAnimator.SetBool("walk", true);
-                SophieAnimator.SetBool("stand", false);
-                SophieAnimator.SetBool("run", false);
-                SophieAnimator.SetBool("dead", false);
-                SophieAnimator.SetBool("walkback", false);
-
-
-                speed = 3.5f;
-
-
-                Sophie.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-
-
-            }*/
-
-        //SPEED RUN
-
-        /*if (Input.GetKey(KeyCode.LeftShift))
-        {
-            SophieAnimator.SetBool("walk", false);
-            SophieAnimator.SetBool("stand", false);
-            SophieAnimator.SetBool("run", true);
-            SophieAnimator.SetBool("dead", false);
-            SophieAnimator.SetBool("walkback", false);
-
-
-
-            speed = 8;
-
-            Sophie.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-        }*/
-
-
-
-        //BACKWARDS
-
-        /*if (Input.GetKey(KeyCode.S))
-        {
-            SophieAnimator.SetBool("walk", false);
-            SophieAnimator.SetBool("stand", false);
-            SophieAnimator.SetBool("run", false);
-            SophieAnimator.SetBool("dead", false);
-            SophieAnimator.SetBool("walkback", true);
-
-
-            speed = 3f;
-
-            Sophie.transform.Translate(Vector3.back * speed * Time.deltaTime);
-        }*/
-
-        //LEFT
-
-        /*if (Input.GetKey(KeyCode.A))
-        {
-            Sophie.transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }*/
-
-        //RIGHT
-
-        /*if (Input.GetKey(KeyCode.D))
-        {
-            Sophie.transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }*/
-
-        //TURN RIGHT
-
-        /*if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Sophie.transform.Rotate(0,0.8f,0);
-        }*/
-
-        //TURN LEFT
-
-        /*if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Sophie.transform.Rotate(0, -0.8f, 0);
-
-        }*/
-
-        //DEAD ANIMATION
-
-        /* if (Input.GetKeyDown(KeyCode.J))
-        {
-
-
-            SophieAnimator.SetBool("walk", false);
-            SophieAnimator.SetBool("stand", false);
-            SophieAnimator.SetBool("run", false);
-            SophieAnimator.SetBool("dead", true);
-
-            playerBox.enabled = false;
-
-        }*/
+        
 
         //PLAYER RESPAWN 
 
         if (Sophie.transform.position.y < -4f)
         {
-            /* if(Sophie.transform.position.x <40 && Sophie.transform.position.z > 950)
-             {
-                 Sophie.transform.position = SavedPosition1.transform.position;
-
-             }*/
             index2 = UnityEngine.Random.Range(0, Savepos.Length);
 
 
             Sophie.transform.position = Savepos[index2].transform.position;
 
 
-            /*if (Sophie.transform.position.x > 30 && Sophie.transform.position.z > 937)
-            {
-                Sophie.transform.position = SavedPosition2.transform.position;
-
-            }
-
-            if (Sophie.transform.position.x < 30 && Sophie.transform.position.y > 937 && Sophie.transform.position.z >800)
-            {
-                Sophie.transform.position = SavedPosition3.transform.position;
-
-            }*/
+            
         }
 
 

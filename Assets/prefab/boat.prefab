@@ -67,7 +67,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 82dcfad5cf75bfd4db20f36cfd508474, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a5c2432ddfa4e1c41a0dfabe919a9505, type: 2}
+      objectReference: {fileID: 2100000, guid: e687d6f77cde074459c1976ac9446de0, type: 2}
     - target: {fileID: 919132149155446097, guid: 82dcfad5cf75bfd4db20f36cfd508474, type: 3}
       propertyPath: m_Name
       value: boat
