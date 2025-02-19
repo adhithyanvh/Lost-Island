@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  bol: {fileID: 5978790418445115019}
+  fireBall: {fileID: 5978790418445115019}
   enem1: {fileID: 7177453339668140203, guid: aa2a17d4e373ef849a2120e72caaa335, type: 3}
   enem2: {fileID: 3847751075899363173, guid: 787023ed15a1c0f4cb1e30cc1b8fff27, type: 3}
   enem3: {fileID: 9069729532441941493, guid: 3369abb518e6ec945a3e35e09cc7d6c4, type: 3}

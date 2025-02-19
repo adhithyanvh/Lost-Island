@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class WinSCene : MonoBehaviour
+public class WinScene : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI TimerTextWin;
     public float WinTime;
@@ -14,7 +14,7 @@ public class WinSCene : MonoBehaviour
     {
         WinTime = Scoredisplay.time;
         TimerTextWin.text = WinTime.ToString();
-        //TimerTextWin.text = ToString().Format("{0:00}:{1:00}", minutes, seconds);
+       
 
         Debug.Log(WinTime);
 
