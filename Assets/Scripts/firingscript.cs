@@ -5,16 +5,17 @@ using UnityEngine;
 public class firingscript : MonoBehaviour
 {
     public float speed;
-    public GameObject bol,enem1,enem2,enem3,enem4,enem5;
+    public GameObject fireBall,enem1,enem2,enem3,enem4,enem5;
     public Protagonist lifethree;
     public int Total;
    
-    public float ebdistance1,ebdistance2,ebdistance3,ebdistance4,ebdistance5;
+    public float ebdistance1,ebdistance2,ebdistance3,ebdistance4,ebdistance5; //Enemy-FireBall Distance
+
 
     // Start is called before the first frame update
     void Start()
     {
-        bol.transform.Rotate(10,0,0);
+        fireBall.transform.Rotate(10,0,0);
         
         
     }
@@ -25,11 +26,11 @@ public class firingscript : MonoBehaviour
        transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
 
-       ebdistance1 = Vector3.Distance(enem1.transform.position, bol.transform.position);
-       ebdistance2 = Vector3.Distance(enem2.transform.position, bol.transform.position);
-       ebdistance3 = Vector3.Distance(enem3.transform.position, bol.transform.position);
-       ebdistance4 = Vector3.Distance(enem4.transform.position, bol.transform.position);
-       ebdistance5 = Vector3.Distance(enem5.transform.position, bol.transform.position);
+       ebdistance1 = Vector3.Distance(enem1.transform.position, fireBall.transform.position);
+       ebdistance2 = Vector3.Distance(enem2.transform.position, fireBall.transform.position);
+       ebdistance3 = Vector3.Distance(enem3.transform.position, fireBall.transform.position);
+       ebdistance4 = Vector3.Distance(enem4.transform.position, fireBall.transform.position);
+       ebdistance5 = Vector3.Distance(enem5.transform.position, fireBall.transform.position);
 
 
         if (ebdistance1 > 50 && ebdistance1 <100)

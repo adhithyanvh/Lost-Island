@@ -19,14 +19,13 @@ public class Protagonist : MonoBehaviour
     public GameObject[] spots;
     public GameObject[] Savepos;
     public GameObject woodlogs, boat, boatspott, Sophie;
-   // public GameObject SavedPosition1,SavedPosition2,SavedPosition3,SavedPosition4,SavedPosition5;
     public Animator SophieAnimator;
     public int score = 0;
     public BoxCollider playerBox;
 
     public int[] arrayCheck = new int[5];
 
-    int index1,c,index2;
+    int index1, c, index2;
     private bool boatSpawn = false;
 
     // Start is called before the first frame update
@@ -35,13 +34,11 @@ public class Protagonist : MonoBehaviour
         spaawner();
         life = 10;
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("mone life " +life);
 
         //DEFAULT ANIMATION
 
@@ -59,20 +56,20 @@ public class Protagonist : MonoBehaviour
 
         //FORWARD
 
-       
 
-        if(Input.GetAxis("Vertical") > 0)
+
+        if (Input.GetAxis("Vertical") > 0)
         {
             SophieAnimator.SetBool("walk", true);
             SophieAnimator.SetBool("stand", false);
             SophieAnimator.SetBool("run", false);
             SophieAnimator.SetBool("dead", false);
             SophieAnimator.SetBool("walkback", false);
-           
+
 
             speed = 3.5f;
 
-            if(Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 speed = 10f;
                 SophieAnimator.SetBool("run", true);
@@ -80,7 +77,7 @@ public class Protagonist : MonoBehaviour
                 SophieAnimator.SetBool("stand", false);
                 SophieAnimator.SetBool("dead", false);
                 SophieAnimator.SetBool("walkback", false);
-                
+
 
             }
         }
@@ -101,12 +98,12 @@ public class Protagonist : MonoBehaviour
             speed = 3f;
         }
 
-        
 
-        
-        
 
-        
+
+
+
+
 
         //PLAYER RESPAWN 
 
@@ -118,7 +115,7 @@ public class Protagonist : MonoBehaviour
             Sophie.transform.position = Savepos[index2].transform.position;
 
 
-            
+
         }
 
 
@@ -127,19 +124,16 @@ public class Protagonist : MonoBehaviour
         if (score >= 5)
         {
             boatSpawn = true;
-            if(Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown(KeyCode.B))
             {
-                if(boatSpawn == true)
+                if (boatSpawn == true)
                 {
                     boatspawner();
                     boatSpawn = false;
                     score = 0;
 
                 }
-                /*if(boatSpawn == true & score == 0)
-                {
-                    SceneChanger3();
-                }*/
+              
             }
         }
 
@@ -156,16 +150,14 @@ public class Protagonist : MonoBehaviour
 
     public void SomeFunction()
     {
-        //float HorizontalInput = Input.GetAxis("Horizontal");
         float VerticalInput = Input.GetAxis("Vertical");
-        //float Jumpp = Input.GetAxis("Mouse Y");
 
         transform.Translate(0, 0, VerticalInput * speed * Time.deltaTime);
 
         float MouseX = Input.GetAxis("Mouse X");
         float MouseY = Input.GetAxis("Mouse Y");
 
-        transform.Rotate(0 ,MouseX * speed * Time.deltaTime, 0);
+        transform.Rotate(0, MouseX * speed * Time.deltaTime, 0);
 
     }
 
@@ -176,23 +168,22 @@ public class Protagonist : MonoBehaviour
         for (int i = 0; i < spots.Length - 5; i++)
         {
             index1 = Random.Range(0, spots.Length);
-            
 
 
 
-            // arrayCheck[i] = index;
+
+
 
             Debug.Log(arrayCheck[i]);
 
-            //Debug.Log(c);
-            //Debug.Log(index);
+
 
 
             Instantiate(woodlogs, spots[index1].transform.position, Quaternion.identity);
-            
+
 
         }
-        
+
 
     }
 
@@ -200,7 +191,7 @@ public class Protagonist : MonoBehaviour
 
 
 
-    
+
 
     //BOAT SPAWNER
 
@@ -216,9 +207,9 @@ public class Protagonist : MonoBehaviour
     {
         if (other.gameObject.CompareTag("logs"))
         {
-            
+
             Destroy(other.gameObject);
-            
+
             score = score + 1;
 
             Debug.Log("Logs Collected = " + score);

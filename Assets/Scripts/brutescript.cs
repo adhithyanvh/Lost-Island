@@ -6,19 +6,18 @@ using UnityEngine.UIElements;
 
 public class brutescript : MonoBehaviour
 {
-    /*public float pedist1,pedist2,pedist3,pedist4,pedist5,pedist6,pedist7,pedist8,pedist9;*/
+
     public int speed;
-    public float pedist1, pedist2, pedist3, pedist4, pedist5;
+    public float pedist1, pedist2, pedist3, pedist4, pedist5; //Player - Enemy Distance
     public GameObject playerr;
-    public GameObject abeEnem1, abeEnem2, abeEnem3, abeEnem4, abeEnem5;
+    public GameObject abeEnem1, abeEnem2, abeEnem3, abeEnem4, abeEnem5; //Abee - the enemy
     public Animator abeAnimator, abeAnimator2, abeAnimator3, abeAnimator4, abeAnimator5;
     public Transform faceto;
-    public GameObject firebol;
-    public GameObject bol;
-    Vector3 abeposition, abeposition2, abeposition3, abeposition4, abeposition5;
+    public GameObject fireBall;
+    Vector3 abeposition, abeposition2, abeposition3, abeposition4, abeposition5; //Positions of the enemy
     public float offsety, offsetx;
-    bool bolpresent = false,bolpresent2 =false,bolpresent3 = false,bolpresent4 =false,bolpresent5 = false;
-    
+    bool bolpresent = false, bolpresent2 = false, bolpresent3 = false, bolpresent4 = false, bolpresent5 = false;
+
 
 
     // Start is called before the first frame update
@@ -62,26 +61,12 @@ public class brutescript : MonoBehaviour
             abeAnimator.SetBool("fire", true);
             abeAnimator.SetBool("idle", false);
 
-
-
-            // abeEnem.transform.position = Vector3.MoveTowards(abeEnem.transform.position, playerr.transform.position, speed * Time.deltaTime);
-            /*if(pedist1 < 10)
-            {
-                abeAnimator.SetBool("Attack", true);
-               
-            }*/
             if (bolpresent == false && pedist1 < 20)
             {
                 InvokeRepeating("firebolattack", 0.7f, 1.35f);
                 bolpresent = true;
 
-                /*if(bolpresent == true && pedist1 > 20  )
-                {
-                    CancelInvoke(nameof(firebolattack));
-                }*/
-
             }
-
 
         }
         else
@@ -103,37 +88,24 @@ public class brutescript : MonoBehaviour
             abeAnimator2.SetBool("fire", true);
             abeAnimator2.SetBool("idle", false);
 
-            // abeEnem.transform.position = Vector3.MoveTowards(abeEnem.transform.position, playerr.transform.position, speed * Time.deltaTime);
-            /*if(pedist1 < 10)
-            {
-                abeAnimator.SetBool("Attack", true);
-               
-            }*/
             if (bolpresent2 == false && pedist2 < 20)
             {
                 Debug.Log("hehehehe");
                 InvokeRepeating("firebolattack2", 0.7f, 1.35f);
                 bolpresent2 = true;
 
-                /*if(bolpresent == true && pedist1 > 20  )
-                {
-                    CancelInvoke(nameof(firebolattack));
-                }*/
-
-
-
             }
         }
         else
         {
-                abeAnimator2.SetBool("fire", false);
-                abeAnimator2.SetBool("idle", true);
+            abeAnimator2.SetBool("fire", false);
+            abeAnimator2.SetBool("idle", true);
 
-                CancelInvoke("firebolattack2");
+            CancelInvoke("firebolattack2");
 
-                bolpresent2 = false;
+            bolpresent2 = false;
 
-         }
+        }
 
         //===========================ENEMY 03==================================
 
@@ -145,12 +117,6 @@ public class brutescript : MonoBehaviour
             abeAnimator3.SetBool("fire", true);
             abeAnimator3.SetBool("idle", false);
 
-            // abeEnem.transform.position = Vector3.MoveTowards(abeEnem.transform.position, playerr.transform.position, speed * Time.deltaTime);
-            /*if(pedist1 < 10)
-            {
-                abeAnimator.SetBool("Attack", true);
-
-            }*/
             if (bolpresent3 == false && pedist3 < 20)
             {
                 InvokeRepeating("firebolattack3", 0.7f, 1.35f);
@@ -167,73 +133,59 @@ public class brutescript : MonoBehaviour
             bolpresent3 = false;
         }
 
-            //===========================ENEMY 04==================================
+        //===========================ENEMY 04==================================
 
 
-            if (pedist4 < 20)
+        if (pedist4 < 20)
+        {
+            abeEnem4.transform.LookAt(new Vector3(faceto.position.x, transform.position.y, faceto.position.z));
+
+            abeAnimator4.SetBool("fire", true);
+            abeAnimator4.SetBool("idle", false);
+
+            if (bolpresent4 == false && pedist4 < 20)
             {
-                abeEnem4.transform.LookAt(new Vector3(faceto.position.x, transform.position.y, faceto.position.z));
-
-                abeAnimator4.SetBool("fire", true);
-                abeAnimator4.SetBool("idle", false);
-
-            // abeEnem.transform.position = Vector3.MoveTowards(abeEnem.transform.position, playerr.transform.position, speed * Time.deltaTime);
-            /*if(pedist1 < 10)
-            {
-                abeAnimator.SetBool("Attack", true);
-
-            }*/
-                if (bolpresent4 == false && pedist4 < 20)
-                {
                 InvokeRepeating("firebolattack4", 0.7f, 1.35f);
                 bolpresent4 = true;
 
-                }
             }
+        }
 
-            else
+        else
+        {
+            abeAnimator4.SetBool("fire", false);
+            abeAnimator4.SetBool("idle", true);
+            CancelInvoke("firebolattack4");
+
+            bolpresent4 = false;
+        }
+
+        //===========================ENEMY 05==================================
+
+
+        if (pedist5 < 20)
+        {
+            abeEnem5.transform.LookAt(new Vector3(faceto.position.x, transform.position.y, faceto.position.z));
+
+            abeAnimator5.SetBool("fire", true);
+            abeAnimator5.SetBool("idle", false);
+
+            if (bolpresent5 == false && pedist5 < 20)
             {
-                abeAnimator4.SetBool("fire", false);
-                abeAnimator4.SetBool("idle", true);
-                CancelInvoke("firebolattack4");
-
-                bolpresent4 = false;
-            }
-
-            //===========================ENEMY 05==================================
-
-
-            if (pedist5 < 20)
-            {
-                abeEnem5.transform.LookAt(new Vector3(faceto.position.x, transform.position.y, faceto.position.z));
-
-                abeAnimator5.SetBool("fire", true);
-                abeAnimator5.SetBool("idle", false);
-
-
-
-              // abeEnem.transform.position = Vector3.MoveTowards(abeEnem.transform.position, playerr.transform.position, speed * Time.deltaTime);
-              /*if(pedist1 < 10)
-              {
-                abeAnimator.SetBool("Attack", true);
-
-              }*/
-                if (bolpresent5 == false && pedist5 < 20)
-                {
-                  InvokeRepeating("firebolattack5", 0.7f, 1.35f);
-                  bolpresent5 = true;
-
-                }
+                InvokeRepeating("firebolattack5", 0.7f, 1.35f);
+                bolpresent5 = true;
 
             }
-            else
-            {
-                abeAnimator5.SetBool("fire", false);
-                abeAnimator5.SetBool("idle", true);
-                CancelInvoke("firebolattack5");
 
-                bolpresent5 = false;
-            }
+        }
+        else
+        {
+            abeAnimator5.SetBool("fire", false);
+            abeAnimator5.SetBool("idle", true);
+            CancelInvoke("firebolattack5");
+
+            bolpresent5 = false;
+        }
 
 
 
@@ -241,45 +193,44 @@ public class brutescript : MonoBehaviour
 
     }
 
-        //-------------ENEMY ATTACK------------------------ 
+    //-------------ENEMY ATTACK------------------------ 
 
-        void firebolattack()
-        {
-            Instantiate(firebol, abeposition, abeEnem1.transform.rotation);
-            //firebol.transform.SetParent(abeEnem1.transform, true);
-
-            //GameObject visual = Instantiate<GameObject>(, hit.point + visualOffset, Quaternion.identity, parentObject.transform);
-
-        }
-        void firebolattack2()
-        {
-        
-            Instantiate(firebol, abeposition2, abeEnem2.transform.rotation);
-            //firebol.transform.SetParent(abeEnem2.transform, true);
-        }
-
-        void firebolattack3()
-        {
-        
-            Instantiate(firebol, abeposition3, abeEnem3.transform.rotation);
-            //firebol.transform.SetParent(abeEnem2.transform, true);
-        }
-
-        void firebolattack4()
-        {
-            
-            Instantiate(firebol, abeposition4, abeEnem4.transform.rotation);
-            //firebol.transform.SetParent(abeEnem2.transform, true);
-        }
-
-        void firebolattack5()
-        {
-            
-            Instantiate(firebol, abeposition5, abeEnem5.transform.rotation);
-            //firebol.transform.SetParent(abeEnem2.transform, true);
-        }
+    void firebolattack()
+    {
+        Instantiate(fireBall, abeposition, abeEnem1.transform.rotation);
+        //firebol.transform.SetParent(abeEnem1.transform, true);
 
 
     }
+    void firebolattack2()
+    {
 
-    
+        Instantiate(fireBall, abeposition2, abeEnem2.transform.rotation);
+        //firebol.transform.SetParent(abeEnem2.transform, true);
+    }
+
+    void firebolattack3()
+    {
+
+        Instantiate(fireBall, abeposition3, abeEnem3.transform.rotation);
+        //firebol.transform.SetParent(abeEnem2.transform, true);
+    }
+
+    void firebolattack4()
+    {
+
+        Instantiate(fireBall, abeposition4, abeEnem4.transform.rotation);
+        //firebol.transform.SetParent(abeEnem2.transform, true);
+    }
+
+    void firebolattack5()
+    {
+
+        Instantiate(fireBall, abeposition5, abeEnem5.transform.rotation);
+        //firebol.transform.SetParent(abeEnem2.transform, true);
+    }
+
+
+}
+
+

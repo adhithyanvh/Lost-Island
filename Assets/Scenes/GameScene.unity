@@ -35975,8 +35975,7 @@ MonoBehaviour:
   abeAnimator4: {fileID: 5866666020044239356}
   abeAnimator5: {fileID: 5866666020689231731}
   faceto: {fileID: 186750114}
-  firebol: {fileID: 5978790418445115019, guid: 8c1de739ff9ca694eae4b32b02b0a005, type: 3}
-  bol: {fileID: 5978790418445115019, guid: 8c1de739ff9ca694eae4b32b02b0a005, type: 3}
+  fireBall: {fileID: 0}
   offsety: 1.8
   offsetx: 0.03
 --- !u!1001 &1966948626
