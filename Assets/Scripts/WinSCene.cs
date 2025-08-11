@@ -9,22 +9,17 @@ public class WinScene : MonoBehaviour
     public float WinTime;
     public int minutes, seconds;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //total time 
         WinTime = Scoredisplay.time;
-        TimerTextWin.text = WinTime.ToString();
+
+        // Convert total seconds into minutes and seconds
+        minutes = Mathf.FloorToInt(WinTime / 60f);
+        seconds = Mathf.FloorToInt(WinTime % 60f);
+
        
-
-        Debug.Log(WinTime);
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        TimerTextWin.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
     }
 }
